@@ -1176,7 +1176,7 @@ chrom& NSGA::tournament(chrom& ind1, chrom& ind2)
 
 
 
-void NSGA::selction_crossover(vector<chrom>& T1, vector<chrom>& T2)//SBX T1父代，T2子代
+void NSGA::selction_crossover(vector<chrom>& T1, vector<chrom>& T2)//SBX
 {
 	int rand, temp;
 	vector<int> t1, t2;
