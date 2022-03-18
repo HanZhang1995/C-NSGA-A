@@ -1067,7 +1067,7 @@ chrom NSGA::generateSolution(vector<job>& J, const int& num)
 				}
 				for (const auto& j : temp_L1)
 				{
-					double val_t = 1.0 / (abs(S.v_Smachines.at(M_num - 1).v_Mbatches.at(v_B_size).get_Pb() - j.get_p())/ S.v_Smachines.at(M_num - 1).get_v() * (j.get_s()) + 1);
+					double val_t = 1.0 /(j.get_s()*(abs(S.v_Smachines.at(M_num - 1).v_Mbatches.at(v_B_size).get_Pb() - j.get_p())/ S.v_Smachines.at(M_num - 1).get_v())+1.0);
 					
 					sel_jobL.push_back({ j.get_num(),val_t,0.0 });
 				}
