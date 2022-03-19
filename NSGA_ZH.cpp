@@ -1044,7 +1044,7 @@ chrom NSGA::generateSolution(vector<job>& J, const int& num)
 				{
 
 					if ((S.v_Smachines.at(M_num - 1).v_Mbatches.at(v_B_size).get_Cb() -
-						max(static_cast<double>(j.get_r()), S.v_Smachines.at(M_num - 1).v_Mbatches.at(v_B_size).get_Sb())) - j.get_p()/S.v_Smachines.at(M_num - 1).get_v() >= 0)
+						max(static_cast<double>(j.get_r()), S.v_Smachines.at(M_num - 1).v_Mbatches.at(v_B_size).get_Sb())) - j.get_p()/S.v_Smachines.at(M_num - 1).get_v() >= -0.0000000001)
 					{
 						temp_L1.push_back(j);
 					}
