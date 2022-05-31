@@ -68,19 +68,17 @@ job& find_j(const int& j, vector<job>& _J)
 
 int Dominated_Compared(chrom P_1, chrom P_2)
 {
-	if (((P_1.ChromFitness.Lmax < P_2.ChromFitness.Lmax) && (P_1.ChromFitness.TC <= P_2.ChromFitness.TC)) ||
-		((P_1.ChromFitness.Lmax <= P_2.ChromFitness.Lmax) && (P_1.ChromFitness.TC < P_2.ChromFitness.TC)))
+	if ((P_1.ChromFitness.Lmax == P_2.ChromFitness.Lmax) && (P_1.ChromFitness.TC == P_2.ChromFitness.TC))
+	{
+		return 0;
+	}
+	else if ((P_1.ChromFitness.Lmax < P_2.ChromFitness.Lmax) && (P_1.ChromFitness.TC < P_2.ChromFitness.TC))
 	{
 		return 1;
 	}
-	else if (((P_1.ChromFitness.Lmax > P_2.ChromFitness.Lmax) && (P_1.ChromFitness.TC >= P_2.ChromFitness.TC)) ||
-		((P_1.ChromFitness.Lmax >= P_2.ChromFitness.Lmax) && (P_1.ChromFitness.TC > P_2.ChromFitness.TC)))
-	{
-		return -1;
-	}
 	else
 	{
-		return 0;
+		return -1;
 	}
 }
 
